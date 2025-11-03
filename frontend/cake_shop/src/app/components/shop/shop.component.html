@@ -1,0 +1,69 @@
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 class="sidebar-title"> Ready-to-Sell Cakes</h2>
+    <ul class="cake-list">
+      <li><a routerLink="/chocolate-cake" routerLinkActive="active">🍫 Chocolate Cake</a></li>
+      <li><a routerLink="/vanilla-cake" routerLinkActive="active">🍦 Vanilla Cake</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🎀 Barbie Doll Cake (for kids’ parties!)</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🎈 Occasion Cakes</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active"> 🧁 Mini Treats</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🟢🍰Veg Cakes</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🔴🍰Non-veg Cakes</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🌈 Rainbow Cake</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🦄 Unicorn Fantasy Cake</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">☕ Coffee Mocha Cake</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🍫🍓 Choco-Berry Fusion Cake</a></li>
+      <li><a routerLink="/strawberry-cake" routerLinkActive="active">🍯 Honey Almond Cake</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Cake Listing -->
+  <div class="main-content">
+    <h2>Our Cakes</h2>
+    <div class="products">
+      <div class="product" *ngFor="let cake of cakes">
+        <img [src]="cake.image" [alt]="cake.name">
+        <h3>{{ cake.name }}</h3>
+        <p class="price">{{ cake.price | currency }}</p>
+        <button (click)="openOrderForm(cake)">🛒 Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar (Optional, can be removed if not used) -->
+  <div class="cart-sidebar" [class.open]="cartItems.length > 0">
+    <h3>🛒 {{ name }}'s Cart</h3>
+    <ul>
+      <li *ngFor="let item of cartItems">{{ item.name }} - ₹{{ item.price }}</li>
+    </ul>
+    <p><strong>Total: ₹{{ total }}</strong></p>
+    <button (click)="clearCart()">❌ Clear Cart</button>
+  </div>
+
+  <!-- Order Form Modal -->
+ <!-- Order Form Modal -->
+<div class="order-form-modal" *ngIf="selectedCake">
+  <h3>📝 Order Details</h3>
+  <p><strong>Cake:</strong> {{ selectedCake.name }}</p>
+
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="orderCustomer.name" required>
+
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="orderCustomer.email" required>
+
+  <label>Phone:</label>
+  <input type="tel" [(ngModel)]="orderCustomer.phone" required>
+
+  <label>Address:</label>
+  <textarea [(ngModel)]="orderCustomer.address" required></textarea>
+
+  <label>Delivery Date:</label>
+  <input type="date" [(ngModel)]="orderCustomer.deliveryDate" [min]="today" required>
+
+  <button (click)="submitOrder()">✅ Submit Order</button>
+  <button (click)="cancelOrder()">❌ Cancel</button>
+</div>
+
+</div>

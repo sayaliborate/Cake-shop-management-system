@@ -1,0 +1,88 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+<nav class="navbar">
+  <div class="logo">Dolcino</div>
+  <ul class="nav-links" *ngIf="role === 'user'">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="user-order-history">Orders</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="/shop">Shop</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="/register">Register</a></li>
+  </ul>
+  <div class="icons">
+    <i class="fas fa-search"></i>
+    <i class="fas fa-shopping-cart"></i>
+    <i class="fas fa-shopping-bag"></i>
+   <div class="dropdown" (click)="toggleDropdown()">
+    <a href="#" class="dropdown-toggle">
+      <i class="fas fa-user"></i>
+    </a>
+  
+    <ul class="dropdown-menu" *ngIf="dropdownOpen">
+      <li>
+        <a routerLink="/login">User Login</a>
+      </li>
+      <li>
+        <a routerLink="/admin-login">Admin Login</a>
+      </li>
+    </ul>
+  </div>
+      </div>
+
+      <ul *ngIf="role === 'admin'">
+        <li><a routerLink="/admin-dashboard">Admin Dashboard</a></li>
+        <li><a routerLink="/manage-orders">Manage Orders</a></li>
+        <li><a routerLink="/logout">Logout</a></li>
+      </ul>
+</nav> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<nav class="navbar">
+  <div class="logo">Dolcino</div>
+
+  <!-- User Links -->
+  <ul class="nav-links">
+    <li><a routerLink="/home" >Home</a></li>
+    <li><a routerLink="/user-order-history">Orders</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a routerLink="/shop">Shop</a></li>
+    <li><a href="/feedback">Feedback</a></li>
+    <li><a href="/contact">Contact</a></li>
+
+    <!-- <li><a routerLink="/register">Register</a></li> -->
+  </ul>
+
+  <!-- Admin Links -->
+  <ul class="nav-links" *ngIf="role === 'admin'">
+    <li><a routerLink="/admin-dashboard">Admin Dashboard</a></li>
+    <li><a routerLink="/manage-orders">Manage Orders</a></li>
+    <li><a routerLink="/add-cakes">Add Cakes</a></li>
+    <li><a routerLink="/total-orders">Total Orders</a></li>
+
+    <li><a (click)="logout()">Logout</a></li>  </ul>
+
+  <!-- Icons & Dropdown -->
+  <div class="icons">
+    <i class="fas fa-search"></i>
+    <i class="fas fa-shopping-cart"></i>
+    <i class="fas fa-shopping-bag"></i>
+    <i class="fas fa-user" (click)="toggleDropdown()"></i>
+
+    <!-- User Icon with Dropdown -->
+    <div class="dropdown" >
+      <!-- <a  class="dropdown-toggle">
+       
+      </a> -->
+
+      <!-- Dropdown Menu -->
+      <ul class="dropdown-menu" [class.show]="dropdownOpen">
+        <li><a routerLink="/login" (click)="closeDropdown()">User Login</a></li>
+        <li><a routerLink="admin-login" (click)="closeDropdown()">Admin Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

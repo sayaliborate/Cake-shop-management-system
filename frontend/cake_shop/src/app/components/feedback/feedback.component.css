@@ -1,0 +1,111 @@
+.feedback-container {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4b2e2e;
+}
+
+.feedback-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #b75c5c;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #6b4a4a;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e3c7c7;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #4b2e2e;
+  background: #fff;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #f08ca1;
+  box-shadow: 0 0 8px rgba(240, 140, 161, 0.6);
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.error {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #d9534f;
+  font-weight: 600;
+  font-style: italic;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #b75c5c;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 12px rgba(183, 92, 92, 0.5);
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #d97777;
+  box-shadow: 0 8px 15px rgba(217, 119, 119, 0.7);
+}
+
+button[type="submit"]:disabled {
+  background-color: #f2bcbc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.success-message {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(21, 87, 36, 0.3);
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(114, 28, 36, 0.3);
+}

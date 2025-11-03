@@ -1,0 +1,191 @@
+/* Form Container */
+.cake-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  background: linear-gradient(145deg, #fff5ec, #ffe3d4);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Inputs and Textarea */
+.input-field,
+.textarea-field,
+.file-input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid #f4a261;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+  border-color: #e76f51;
+  box-shadow: 0 0 8px rgba(231, 111, 81, 0.3);
+  outline: none;
+}
+
+/* Submit Button */
+.upload-btn {
+  background-color: #e76f51;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #f28482;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Cake Table */
+.cake-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cake-table th,
+.cake-table td {
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.cake-table th {
+  background-color: #fcd5ce;
+  color: #6d4c41;
+}
+
+.cake-row:hover {
+  background-color: #fff0ea;
+}
+
+/* Cake Image */
+.cake-image {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Payment Buttons */
+.payment-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.payment-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: white;
+}
+
+.online-btn {
+  background-color: #2a9d8f;
+}
+
+.online-btn:hover {
+  background-color: #21867a;
+  transform: scale(1.05);
+}
+
+.cod-btn {
+  background-color: #f4a261;
+}
+
+.cod-btn:hover {
+  background-color: #de8e48;
+  transform: scale(1.05);
+}
+
+/* Modal - Scanner */
+.scanner-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.scanner-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.scanner-image {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* Close Button */
+.close-btn {
+  background-color: #e76f51;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #f28482;
+  transform: translateY(-2px);
+}
+
+/* QR Code Section */
+.qr-code-container {
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff5ef;
+  border: 2px dashed #f4a261;
+  border-radius: 12px;
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.input-field,
+.textarea-field,
+.file-input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 2px solid #f4a261;
+  font-size: 1rem;
+  background: #fff;
+  box-sizing: border-box; /* ✅ ensures padding doesn’t break layout */
+  transition: all 0.3s ease;
+  resize: vertical; /* allows vertical resize only for textarea */
+  display: block;
+}

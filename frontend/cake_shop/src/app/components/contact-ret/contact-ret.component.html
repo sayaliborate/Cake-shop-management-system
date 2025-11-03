@@ -1,0 +1,27 @@
+<div class="contact-list-container">
+  <h2>All Contact Messages</h2>
+
+  <table *ngIf="contacts.length > 0" class="contact-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="contacts.length === 0">
+    No contact messages available.
+  </div>
+</div>
+

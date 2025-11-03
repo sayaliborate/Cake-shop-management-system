@@ -1,0 +1,18 @@
+<div class="feedback-list-container">
+  <h2>User Feedbacks</h2>
+
+  <div *ngIf="loading">Loading feedbacks...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <ul *ngIf="!loading && feedbacks.length">
+    <li *ngFor="let fb of feedbacks" class="feedback-item">
+      <h3>{{ fb.name }} ({{ fb.email }})</h3>
+      <p>{{ fb.message }}</p>
+      <small *ngIf="fb.created_at">Submitted on: {{ fb.created_at | date:'medium' }}</small>
+    </li>
+  </ul>
+
+  <div *ngIf="!loading && !feedbacks.length">
+    No feedbacks available yet.
+  </div>
+</div>

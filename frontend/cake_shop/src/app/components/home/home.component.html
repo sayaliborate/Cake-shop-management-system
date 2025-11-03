@@ -1,0 +1,121 @@
+<div class="home-container">
+    <!-- <h1>Welcome to Dolcino Bakery 🍰</h1>
+    <p>Indulge in our delightful cakes, pastries, and desserts made with love!</p>
+   -->
+    <!-- YouTube Video -->
+    <div class="video-container">
+        <iframe  width="100%" 
+        height="100%" 
+          src="https://www.youtube.com/embed/QdEd9JCnzCc" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+  
+      <!-- <div class="parent-container">
+        <button class="explore-btn">Explore More</button>
+    </div> -->
+      </div>
+
+  <div class="bakery-story-container">
+    <div class="image-container">
+      
+    </div>
+    <div class="text-container">
+      <h2 style="color: #a67b5b;">Bakery Story</h2>
+      <p class="subtitle">Baking with love, makes it delicious.</p>
+      <p>
+        We started with a passion for baking and a love for sweet treats. Every item we make is crafted with the finest ingredients and a touch of warmth.
+      </p>
+      <p>
+        Our journey has been about more than just baking—it’s about bringing joy, celebrations, and unforgettable flavors to your table.
+      </p>
+    </div>
+  </div>
+  <!-- third container -->
+
+  <section class="testimonials">
+    <h2 style="color: aliceblue;">Clients' Testimonials</h2>
+    <p>What others say about us</p>
+  
+    <div class="testimonial-container">
+      <button class="scroll-btn left" (click)="scrollLeft()">&#10094;</button> 
+  
+      <div class="testimonial-wrapper">
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials; let i = index">
+          <img [src]="testimonial.image" [alt]="testimonial.name" class="testimonial-img">
+          <p class="testimonial-text">"{{ testimonial.text }}"</p>
+          <h4>{{ testimonial.name }}</h4>
+          <p class="testimonial-role">{{ testimonial.role }}</p>
+        </div>
+      </div>
+  
+      <button class="scroll-btn right" (click)="scrollRight()">&#10095;</button> 
+    </div>
+  
+    <div class="dots">
+      <span *ngFor="let t of testimonials; let i = index" 
+            [class.active]="i === activeIndex" 
+            (click)="setActive(i)">
+      </span>
+    </div>
+  </section>
+  
+  
+  <!-- container 4 -->
+  <section class="like-products">
+    <h2>Like Our Products?</h2>
+    <div class="divider"></div>
+    <p> 
+      Treat yourself to your favourite Theobroma products or surprise your loved ones with an edible gift.
+    </p>
+<button class="order-btn" routerLink="/user-order-history">ORDER ONLINE</button>
+    <img src="assets/images/cake2.png" alt="Carriage" class="decorative-img">
+  </section>
+
+  <!-- container 5 -->
+  <section class="contact-container">
+    <h2 class="contact-heading">Get in Touch</h2>
+    <p class="contact-subtext">We'd love to hear from you! Reach out to us for any inquiries.</p>
+  
+    <div class="contact-content">
+      <!-- 📩 Contact Form -->
+      <form class="contact-form">
+        <div class="input-group">
+          <input type="text" required>
+          <label>Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <textarea required></textarea>
+          <label>Message</label>
+        </div>
+        <button type="submit" class="contact-btn">Send Message</button>
+      </form>
+  
+      <!-- 📍 Address & Map -->
+      <div class="contact-info">
+        <h3>Our Location</h3>
+        <p>123 Bakery Street, Sweet City, India</p>
+        <p>Email: contactbakeryshop.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=..."
+          class="map"></iframe>
+      </div>
+    </div>
+     <!-- 🌟 Social Media Icons -->
+  <div class="social-icons">
+    <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="icon twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  </section>
+  
+  

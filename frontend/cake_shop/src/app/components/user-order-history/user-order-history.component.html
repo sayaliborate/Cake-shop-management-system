@@ -1,0 +1,50 @@
+<div class="cakes-container">
+  <div *ngFor="let cake of cakes" class="cake-card">
+    <h3>{{ cake.name }}</h3>
+    <p class="price">Price: ₹{{ cake.price }}</p>
+
+    <img [src]="'http://127.0.0.1:8000' + cake.image" *ngIf="cake.image" width="200" class="cake-image" />
+    <p>{{ cake.description }}</p>
+
+    <button (click)="openOrderForm(cake)" class="btn buy-now-btn">Buy Now</button>
+  </div>
+
+  <!-- Order Form Modal -->
+  <div *ngIf="showOrderForm" class="order-form-modal">
+    <div class="order-form-content">
+      <h3>Enter Order Details</h3>
+      <form (ngSubmit)="submitOrderForm()" #orderFormRef="ngForm">
+        <input type="text" [(ngModel)]="orderForm.customer_name" name="customer_name" placeholder="Your Name" required />
+        <input type="text" [(ngModel)]="orderForm.address" name="address" placeholder="Address" required />
+        <input type="text" [(ngModel)]="orderForm.phone_number" name="phone_number" placeholder="Phone Number" required />
+        <input type="number" [(ngModel)]="orderForm.weight" name="weight" placeholder="Weight (kg)" required />
+        <input type="number" [(ngModel)]="orderForm.custom_weight" name="custom_weight" placeholder="Custom Weight (optional)" />
+        <input type="number" [(ngModel)]="orderForm.quantity" name="quantity" placeholder="Quantity" required />
+
+        <button type="submit" class="btn">Next</button>
+        <button type="button" (click)="cancelOrderForm()" class="btn close-btn">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Payment Options Modal -->
+  <div *ngIf="showPaymentOptions" class="payment-options-modal">
+  <div class="payment-options-content">
+    <h3>Select Payment Method</h3>
+    <!-- <button (click)="selectCOD()" class="btn payment-btn online-btn">Online Payment</button> -->
+    <button (click)="selectCOD()" class="btn payment-btn cod-btn">Cash On Delivery</button>
+    <button (click)="cancelPaymentOptions()" class="btn close-btn">Cancel</button>
+  </div>
+</div>
+
+
+  <!-- Dummy Scanner for COD -->
+  <div *ngIf="showScanner" class="scanner-modal">
+    <div class="scanner-content">
+      <h3>QR Code Scanner </h3>
+      <img src="../../../assets/images/qr.png" alt="Scanner Placeholder" class="scanner-image" />
+      <button (click)="confirmCOD()" class="btn confirm-btn">Confirm Order</button>
+      <button (click)="closeScanner()" class="btn close-btn">Close</button>
+    </div>
+  </div>
+</div>

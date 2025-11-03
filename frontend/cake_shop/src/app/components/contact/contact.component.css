@@ -1,0 +1,77 @@
+.contact-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f5f9ff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #3a6ea5;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #3a6ea5;
+  background-color: #f0f8ff;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button {
+  width: 100%;
+  background-color: #3a6ea5;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2d598d;
+}
+
+.contact-form p {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.contact-form .error-message {
+  color: red;
+  font-size: 13px;
+}
+
+.contact-form .success-message {
+  color: green;
+  font-size: 13px;
+}

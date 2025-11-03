@@ -1,0 +1,53 @@
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* space between rows */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.15); /* subtle gold glow */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  color: #444;
+}
+
+th {
+  background: linear-gradient(90deg, #d4af37, #f7d877);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+
+tr {
+  background-color: #fff8e1; /* soft creamy background */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(212, 175, 55, 0.1);
+  transition: transform 0.2s ease;
+}
+
+tr:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.25);
+}
+
+.error {
+  color: #b00020;
+  font-weight: 700;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.loading {
+  font-style: italic;
+  color: #a67c00; /* dark gold */
+  margin-top: 20px;
+  font-weight: 600;
+  text-align: center;
+}

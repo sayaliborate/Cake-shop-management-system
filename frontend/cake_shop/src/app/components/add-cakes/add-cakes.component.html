@@ -1,0 +1,104 @@
+<!-- Add Cake Form -->
+<div class="cake-form">
+  <h2 style="text-align: center; color: #e76f51;">Add a New Cake</h2>
+  <form (ngSubmit)="onSubmit()">
+    <input
+      class="input-field"
+      type="text"
+      placeholder="Cake Name"
+      [(ngModel)]="cake.name"
+      name="name"
+      required
+    />
+
+    <textarea
+      class="textarea-field"
+      placeholder="Description"
+      [(ngModel)]="cake.description"
+      name="description"
+      required
+    ></textarea>
+
+    <input
+      class="input-field"
+      type="number"
+      placeholder="Price (₹)"
+      [(ngModel)]="cake.price"
+      name="price"
+      required
+    />
+
+    <input
+      class="file-input"
+      type="file"
+      (change)="onFileSelected($event)"
+      required
+    />
+
+    <button class="upload-btn" type="submit">Upload Cake</button>
+  </form>
+</div>
+
+<!-- Cake List Display -->
+<table class="cake-table" border="1" style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <!-- <th>Payment Options</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cake of cakes" class="cake-row">
+      <td>
+        <img
+          *ngIf="cake.image"
+          [src]="'http://localhost:8000' + cake.image"
+          alt="Cake Image"
+          width="100"
+          height="80"
+        />
+      </td>
+      <td style="color: #d2691e;"><strong>{{ cake.name }}</strong></td>
+      <td>{{ cake.description }}</td>
+      <td>₹{{ cake.price }}</td>
+      <!-- <td>
+        <button class="payment-btn online-btn" (click)="payOnline(cake)">
+          Pay Online
+        </button>
+        <button class="payment-btn cod-btn" (click)="selectCakeForCOD(cake)">
+          Cash on Delivery
+        </button>
+      </td> -->
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- QR Code Payment Modal -->
+<div *ngIf="showQRCode" class="qr-code-container">
+  <h3 style="color: #2a9d8f;">Scan QR to Pay</h3>
+  <!-- <qrcode
+    [qrdata]="qrData"
+    [width]="200"
+    [errorCorrectionLevel]="'M'"
+  ></qrcode> -->
+  <!-- <br /><br />
+  <button class="upload-btn" (click)="confirmPayment()">Confirm Payment</button>
+</div> -->
+
+<!-- COD Modal / Scanner -->
+<div *ngIf="showScanner" class="scanner-modal">
+  <div class="scanner-content">
+    <h3 style="color: #f4a261;">Cash on Delivery Confirmed!</h3>
+    <img
+      class="scanner-image"
+      src="https://cdn-icons-png.flaticon.com/512/4086/4086679.png"
+      alt="Scanner"
+    />
+    <p>Your order will be delivered soon.</p>
+    <button class="close-btn" (click)="closeScanner()">Close</button>
+  </div>
+</div>

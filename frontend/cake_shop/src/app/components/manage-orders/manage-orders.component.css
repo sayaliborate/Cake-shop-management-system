@@ -1,0 +1,103 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Georgia', serif;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3); /* subtle gold shadow */
+  overflow: hidden;
+}
+
+thead {
+  background: linear-gradient(90deg, #d4af37, #b8860b); /* golden gradient */
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+thead th {
+  padding: 14px 20px;
+  text-align: left;
+  letter-spacing: 1px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+thead th:last-child {
+  border-right: none;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f3e5ab;
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #fff9e6; /* light gold background on hover */
+}
+
+tbody td {
+  padding: 14px 20px;
+  color: #5a4631; /* dark gold/brown */
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 2px solid #d4af37;
+  background-color: #fffbea;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6f4e1e;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover {
+  border-color: #b8860b;
+  box-shadow: 0 0 10px rgba(184, 134, 11, 0.7);
+}
+
+select:focus {
+  outline: none;
+  border-color: #996515;
+  box-shadow: 0 0 12px rgba(153, 101, 21, 0.9);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: 1rem;
+    background: #fffbea;
+    box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    padding: 15px 20px;
+  }
+  tbody td {
+    padding: 10px 15px;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    font-size: 0.95rem;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    padding-left: 10px;
+    font-weight: 700;
+    color: #b8860b;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+}

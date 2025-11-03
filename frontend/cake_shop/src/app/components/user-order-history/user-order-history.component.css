@@ -1,0 +1,269 @@
+/* Body & page basics */
+body {
+  font-family: 'Georgia', serif;
+  background: #fffaf0; /* soft cream background */
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Cake card container */
+.cake-card {
+  background: white;
+  border: 1.5px solid #d4af37; /* gold border */
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(212, 175, 55, 0.25);
+  padding: 20px;
+  margin-bottom: 30px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.cake-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.35);
+}
+
+/* Cake title */
+.cake-card h3 {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #b8860b; /* dark goldenrod */
+}
+
+/* Price style */
+.price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #a67c00;
+}
+
+/* Cake image style */
+.cake-image {
+  border-radius: 12px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+}
+.cake-image {
+  width: 220px;                 /* Fixed width */
+  height: 160px;                /* Fixed height */
+  object-fit: cover;            /* Maintain aspect ratio, crop if needed */
+  border-radius: 12px;
+  margin: 0 auto 15px auto;     /* Center the image horizontally */
+  display: block;
+  border: 2px solid #d4af37;
+  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease;
+}
+
+
+.cake-card:hover .cake-image {
+  transform: scale(1.05);
+}
+
+
+/* Description text */
+.cake-card p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 18px;
+  min-height: 60px;
+}
+
+/* Buy Now button */
+.btn.buy-now-btn {
+  background: linear-gradient(45deg, #d4af37, #b8860b);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.7);
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+.btn.buy-now-btn:hover {
+  background: linear-gradient(45deg, #b8860b, #d4af37);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.9);
+}
+
+/* Modal overlay style */
+.order-form-modal,
+.payment-options-modal,
+.qr-code-container,
+.scanner-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 15px;
+}
+
+/* Modal content boxes */
+.order-form-content,
+.payment-options-content,
+.qr-code-container > div,
+.scanner-content {
+  background: white;
+  border-radius: 15px;
+  padding: 30px 35px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+  text-align: center;
+  font-family: 'Palatino Linotype', serif;
+}
+
+/* Modal headings */
+.order-form-content h3,
+.payment-options-content h3,
+.scanner-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #b8860b;
+  font-weight: 700;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #b8860b;
+  box-shadow: 0 0 8px rgba(184, 134, 11, 0.5);
+}
+
+/* Buttons inside modals */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+  margin: 8px 10px 0 10px;
+  font-family: 'Georgia', serif;
+}
+
+.btn.close-btn {
+  background-color: #b8860b;
+  color: white;
+}
+.btn.close-btn:hover {
+  background-color: #a67c00;
+}
+
+.btn.payment-btn {
+  width: 180px;
+  margin: 12px 10px;
+  border-radius: 40px;
+}
+
+.btn.cod-btn {
+  background: #f0c419;
+  color: #4a3c00;
+  box-shadow: 0 5px 15px rgba(240, 196, 25, 0.6);
+}
+.btn.cod-btn:hover {
+  background: #d4af37;
+  color: #3b2f00;
+  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.8);
+}
+
+.btn.online-btn {
+  background: #00796b;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 121, 107, 0.6);
+}
+.btn.online-btn:hover {
+  background: #004d40;
+  box-shadow: 0 8px 22px rgba(0, 77, 64, 0.8);
+}
+
+.btn.confirm-btn {
+  background: linear-gradient(45deg, #d4af37, #b8860b);
+  color: white;
+  padding: 14px 36px;
+  font-size: 1.3rem;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.9);
+  margin-top: 25px;
+}
+.btn.confirm-btn:hover {
+  background: linear-gradient(45deg, #b8860b, #d4af37);
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 1);
+}
+
+/* QR Code container center */
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code-container qrcode {
+  margin-bottom: 20px;
+}
+
+/* Scanner image style */
+.scanner-image {
+  max-width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.7);
+  margin-bottom: 20px;
+}
+.cakes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* Update cake-card to have nice hover effect and slight 3D feel */
+.cake-card {
+  background: white;
+  border: 1.5px solid #d4af37;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(212, 175, 55, 0.25);
+  padding: 20px;
+  max-width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Add a subtle 3D perspective */
+  will-change: transform;
+}
+
+.cake-card:hover {
+  transform: scale(1.07) translateY(-10px);
+  box-shadow: 0 16px 36px rgba(212, 175, 55, 0.45);
+  z-index: 10;
+}

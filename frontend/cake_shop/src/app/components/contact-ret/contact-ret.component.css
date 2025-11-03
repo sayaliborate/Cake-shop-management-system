@@ -1,0 +1,34 @@
+.contact-list-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9fbfd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.contact-table th, .contact-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.contact-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.contact-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.contact-table tr:hover {
+  background-color: #e9f5ff;
+}
